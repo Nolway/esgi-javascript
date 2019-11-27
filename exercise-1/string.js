@@ -58,7 +58,7 @@ function prop_access(o, p, pf = '') {
   var result = o[path[0]] !== undefined ? o[path[0]] : "";  
   
   if (path.length === 1) {
-    return result ? result : pf;
+    return result ? result : pf + " not exist";
   }
   path.shift();
   return prop_access(result, path.join('.'), pf);
@@ -94,3 +94,4 @@ function vig(s, k) {
     // }).join('');
   }).join(' ');
 }
+
