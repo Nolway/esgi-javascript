@@ -50,7 +50,7 @@ function leet(s) {
   return s;
 }
 
-function prop_access(o, p) {
+function prop_access(o, p, pf = '') {
   if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
   let path = p.split('.');
 
@@ -60,7 +60,7 @@ function prop_access(o, p) {
     return result;
   }
   path.shift();
-  return prop_access(result, path.join('.'));
+  return prop_access(result, path.join('.'), pf ? pf : p);
 }
 
 function verlan(s) {
