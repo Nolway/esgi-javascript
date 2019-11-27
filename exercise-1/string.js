@@ -51,14 +51,16 @@ function leet(s) {
 }
 
 function prop_access(p, o) {
-  if (typeof p !== "" || p.length === 0 || o !== "object") return "";
+  if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
   let path = p.split('.');
 
-  var result = o[p[0]] !== "undefined" ? o[p[0]] : "";
+  var result = o[path[0]] !== "undefined" ? o[path[0]] : "";
+  
   if (path.length === 1) {
-    return result;
+    return typeof result === "string" ? result : "";
   }
-  return prop_access(path.shift(), result)
+  path.shift();
+  return prop_access(path.join('.'), result)
 }
 
 function verlan(s) {
@@ -68,6 +70,12 @@ function verlan(s) {
   }).join(' ');
 }
 
-console.log(verlan("Hello all"));
+// console.log(prop_access('test1.test2.test3', {
+//   test1: {
+//     test2: {
+//       test3: "Hello World"
+//     }
+//   }
+// }));
 
 //console.log(leet("whEsh+ la #s't{r@eet"));
