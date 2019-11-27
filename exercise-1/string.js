@@ -51,7 +51,8 @@ function leet(s) {
 }
 
 function prop_access(o, p, pf = '') {
-  if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
+  if (o || typeof o !== "object") return "";
+  if (typeof p !== "string" || p.length === 0) return o;
   let path = p.split('.');
   pf = pf ? pf : p;
 
