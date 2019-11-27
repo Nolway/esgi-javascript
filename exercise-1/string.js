@@ -57,7 +57,7 @@ function prop_access(o, p) {
   var result = o[path[0]] !== "undefined" ? o[path[0]] : "";
   
   if (path.length === 1) {
-    return typeof result === "string" ? result : "";
+    return result;
   }
   path.shift();
   return prop_access(path.join('.'), result)
