@@ -78,19 +78,5 @@ function yoda(s) {
 
 function vig(s, k) {
   if (typeof s !== "string" || s.length === 0 || typeof k !== "string" || k.length === 0) return "";
-  var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  return s.split(' ').map(function(word) {
-    for (char in string) {
-      if (!alphabet.includes(char) || !alphabet.includes(char.toUpperCase())) {
-        return char;
-      }
-    }
-    // return word.split('').map(function(char) {
-    //   if (!alphabet.includes(char) || !alphabet.includes(char.toUpperCase())) {
-    //     return char;
-    //   }
 
-    //   return alphabet.indexOf(char);
-    // }).join('');
-  }).join(' ');
 }
