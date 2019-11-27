@@ -61,4 +61,11 @@ function prop_access(p, o) {
   return prop_access(path.shift(), result)
 }
 
+function verlan(s) {
+  if (typeof s !== "string" || s.length === 0) return "";
+  s.split(" ").map(function(word) {
+    return word.reverse();
+  }).join(" ");
+}
+
 //console.log(leet("whEsh+ la #s't{r@eet"));
