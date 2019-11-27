@@ -23,7 +23,7 @@ function camelCase(s) {
 
 function snake_case(s) {
   if (typeof s !== "string" || s.length === 0) return "";
-  return s.replace(/[^a-zA-Z0-9_ ]/g, "").split(" ").map(function(word) {
+  return s.replace(/[^a-zA-Z0-9 ]/g, "").split(" ").map(function(word) {
     return word.toLowerCase();
   }).join("_");
 }
@@ -53,14 +53,15 @@ function leet(s) {
 function prop_access(o, p, pf = '') {
   if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
   let path = p.split('.');
+  pf = pf ? pf : p;
 
   var result = o[path[0]] !== undefined ? o[path[0]] : "";  
   
   if (path.length === 1) {
-    return result;
+    return result ? result : pf;
   }
   path.shift();
-  return prop_access(result, path.join('.'), pf ? pf : p);
+  return prop_access(result, path.join('.'), pf);
 }
 
 function verlan(s) {
