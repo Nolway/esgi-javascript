@@ -70,6 +70,11 @@ function verlan(s) {
   }).join(' ');
 }
 
+function yoda(s) {
+  if (typeof s !== "string" || s.length === 0) return "";
+  return s.split(' ').reverse().join(' ');
+}
+
 // console.log(prop_access('test1.test2.test3', {
 //   test1: {
 //     test2: {
