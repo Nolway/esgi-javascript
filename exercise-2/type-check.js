@@ -1,3 +1,9 @@
 function type_check_v1(v, t) {
-  return typeof t === "string" && t.length > 0 && typeof v === t;
+  if (typeof t !== "string" || t.length === 0) return false;
+  if (t === "null") {
+    return t === null;
+  } else if (t === "array") {
+    return Array.isArray(v);
+  }
+  return typeof v === t;
 }
