@@ -3,7 +3,7 @@ function ucfirst (s) {
   return s[0].toUpperCase() + s.substr(1);
 }
 
-function captitalize(s) {
+function capitalize(s) {
   if (typeof s !== "string" || s.length === 0) return "";
   let wordArray = s.toLowerCase().split(' ');
   for(let i = 0; i < wordArray.length; i++) {
