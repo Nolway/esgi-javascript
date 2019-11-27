@@ -7,3 +7,18 @@ function type_check_v1(v, t) {
   }
   return typeof v === t;
 }
+
+function type_check_v2(v, conf) {
+
+  if (conf.hasOwnProperty('type')) {
+    if(!type_check_v1(v, conf.type)) return false;
+  }
+  if (conf.hasOwnProperty('value')) {
+    if(v !== conf.value) return false;
+  }
+  if (conf.hasOwnProperty('enum')) {
+    if(!conf.enum.includes(v)) return false;
+  }
+
+  return true;
+}
