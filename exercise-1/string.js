@@ -70,13 +70,13 @@ function verlan(s) {
   }).join(' ');
 }
 
-function yoda(s) {
-  if (typeof s !== "string" || s.length === 0) return "";
-  return s.split(' ').reverse().join(' ');
-}
+// function yoda(s) {
+//   if (typeof s !== "string" || s.length === 0) return "";
+//   return s.split(' ').reverse().join(' ');
+// }
 
-function vig(s, k) {
-}
+// function vig(s, k) {
+// }
 
 // function vig(s, k) {
 //   if (typeof s !== "string" || s.length === 0 || typeof k !== "string" || k.length === 0) return "";
