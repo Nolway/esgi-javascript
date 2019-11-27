@@ -63,9 +63,11 @@ function prop_access(p, o) {
 
 function verlan(s) {
   if (typeof s !== "string" || s.length === 0) return "";
-  s.split(" ").map(function(word) {
-    return word.reverse();
-  }).join(" ");
+  return s.split(' ').map(function(word) {
+    return word.split('').reverse().join('');
+  }).join(' ');
 }
+
+console.log(verlan("Hello all"));
 
 //console.log(leet("whEsh+ la #s't{r@eet"));
