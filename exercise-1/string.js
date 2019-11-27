@@ -51,8 +51,7 @@ function leet(s) {
 }
 
 function prop_access(o, p, pf = '') {
-  if (o || typeof o !== "object") return "";
-  if (typeof p !== "string" || p.length === 0) return o;
+  if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
   let path = p.split('.');
   pf = pf ? pf : p;
 
@@ -95,4 +94,3 @@ function vig(s, k) {
     // }).join('');
   }).join(' ');
 }
-
