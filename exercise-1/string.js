@@ -16,7 +16,7 @@ function capitalize(s) {
 
 function camelCase(s) {
   if (typeof s !== "string" || s.length === 0) return "";
-  return captitalize(s.replace(/[^a-zA-Z0-9 ]/g, "")).join("");
+  return capitalize(s.replace(/[^a-zA-Z0-9 ]/g, "")).join("");
 }
 
 function snake_case(s) {
