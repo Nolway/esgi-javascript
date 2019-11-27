@@ -50,7 +50,7 @@ function leet(s) {
   return s;
 }
 
-function prop_access(o, p) {
+function prop_access(o, p, pf = '') {
   if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
   let path = p.split('.');
 
