@@ -13,11 +13,10 @@ function capitalize(s) {
   return wordArray.join(' ');
 }
 
+
 function camelCase(s) {
   if (typeof s !== "string" || s.length === 0) return "";
-  return captitalize(s.replace(/[^a-zA-Z0-9 ]/g, "")).split(" ").map(function(word, index) {
-    return (index === 0 ? word.toLowerCase() : word);
-  }).join("");
+  return captitalize(s.replace(/[^a-zA-Z0-9 ]/g, "")).join("");
 }
 
 function snake_case(s) {
