@@ -94,12 +94,12 @@ function yoda(s) {
 //   }).join(' ');
 // }
 
-console.log(prop_access({
-  test1: {
-    test2: {
-      test3: "Hello World"
-    }
-  }
-}, 'test1.test2.test3'));
+// console.log(prop_access({
+//   test1: {
+//     test2: {
+//       test3: "Hello World"
+//     }
+//   }
+// }, 'test1.test2.test3'));
 
 //console.log(leet("whEsh+ la #s't{r@eet"));
