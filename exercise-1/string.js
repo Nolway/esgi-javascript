@@ -50,18 +50,18 @@ function leet(s) {
   return s;
 }
 
-function prop_access(o, p, pf = '') {
-  if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
-  let path = p.split('.');
+// function prop_access(o, p, pf = '') {
+//   if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
+//   let path = p.split('.');
 
-  var result = o[path[0]] !== undefined ? o[path[0]] : "";  
+//   var result = o[path[0]] !== undefined ? o[path[0]] : "";  
   
-  if (path.length === 1) {
-    return result;
-  }
-  path.shift();
-  return prop_access(result, path.join('.'), pf ? pf : p);
-}
+//   if (path.length === 1) {
+//     return result;
+//   }
+//   path.shift();
+//   return prop_access(result, path.join('.'), pf ? pf : p);
+// }
 
 function verlan(s) {
   if (typeof s !== "string" || s.length === 0) return "";
