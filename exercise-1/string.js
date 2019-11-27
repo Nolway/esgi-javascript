@@ -21,7 +21,7 @@ function camelCase(s) {
 
 function snake_case(s) {
   if (typeof s !== "string" || s.length === 0) return "";
-  return s.replace(/[^a-zA-Z0-9 ]/g, "").split(" ").map(function(word) {
+  return s.replace(/[^a-zA-Z0-9_ ]/g, "").split(" ").map(function(word) {
     return word.toLowerCase();
   }).join("_");
 }
