@@ -19,7 +19,9 @@ function type_check_v2(v, conf) {
     if(v !== conf.value || v.toString() !== conf.value.toString()) return false;
   }
   if (conf.hasOwnProperty('enum')) {
-    if(!conf.enum.includes(v)) return false;
+    if(!conf.enum.find(function (value) {
+      return v === value || value.toString() === v.toString();
+    })) return false;
   }
 
   return true;
