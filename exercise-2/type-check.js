@@ -4,8 +4,6 @@ function type_check_v1(v, t) {
     return v === null;
   } else if (t === "array") {
     return Array.isArray(v);
-  } else if (t === "undefined") {
-    return v === undefined;
   } else if (v === null ||  v instanceof Array) {
     return false;
   }
