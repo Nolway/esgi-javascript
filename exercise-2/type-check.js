@@ -16,13 +16,15 @@ function type_check_v2(v, conf) {
     if(!type_check_v1(v, conf.type)) return false;
   }
   if (conf.hasOwnProperty('value')) {
-    if(v !== conf.value || v.toString() !== conf.value.toString()) return false;
+    if(JSON.stringify(v) != JSON.stringify(conf.value)) return false;
   }
   if (conf.hasOwnProperty('enum')) {
     if(!conf.enum.find(function (value) {
-      return v === value || value.toString() === v.toString();
+      return JSON.stringify(value) == JSON.stringify(v);
     })) return false;
   }
 
   return true;
 }
+
+console.log(type_check_v2({ test: "dgfds", test2: "23D" }, { value: { test: "dgfds", test2: "23D" } }));
