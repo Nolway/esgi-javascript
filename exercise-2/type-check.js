@@ -3,10 +3,10 @@ function type_check_v1(v, t) {
   if (t === "null") {
     return v === null;
   } else if (t === "array") {
-    return v instanceof Array && Array.isArray(v);
+    return Array.isArray(v);
   } else if (t === "undefined") {
     return v === undefined;
-  } else if (v === null) {
+  } else if (v === null ||  v instanceof Array) {
     return false;
   }
   return typeof v === t;
