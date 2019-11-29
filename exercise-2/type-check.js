@@ -26,3 +26,7 @@ function type_check_v2(v, conf) {
 
   return true;
 }
+
+function type_check(obj, conf) {
+  return obj;
+}
