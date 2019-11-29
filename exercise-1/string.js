@@ -50,18 +50,37 @@ function leet(s) {
   return s;
 }
 
-function prop_access(o, p, pf = '') {
-  if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
-  let path = p.split('.');
-  pf = pf ? pf : p;
+// function prop_access(o, p, pf = '') {
+//   if (typeof p !== "string" || p.length === 0 || typeof o !== "object") return "";
+//   let path = p.split('.');
+//   pf = pf ? pf : p;
 
-  var result = o[path[0]] !== undefined ? o[path[0]] : "";  
+//   var result = o[path[0]] !== undefined ? o[path[0]] : "";  
   
-  if (path.length === 1) {
-    return result ? result : pf + " not exist";
+//   if (path.length === 1) {
+//     return result ? result : pf + " not exist";
+//   }
+//   path.shift();
+//   return prop_access(result, path.join('.'), pf);
+// }
+
+
+function prop_access(obj, str) {
+  if (str === "" || str === null || typeof obj !== "object") {
+      return obj;
   }
-  path.shift();
-  return prop_access(result, path.join('.'), pf);
+  let access = str.trim().split('.');
+  let temp = obj;
+  for (let i = 0; access.length; i++) {
+      if (i == access.length) {
+          return temp;
+      }
+      if (!Object.prototype.hasOwnProperty.call(temp, access[i])) {
+          console.log(str + " not exist");
+          return false;
+      }
+      temp = temp[access[i]];
+  }
 }
 
 function verlan(s) {
