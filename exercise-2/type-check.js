@@ -6,6 +6,8 @@ function type_check_v1(v, t) {
     return v instanceof Array && Array.isArray(v);
   } else if (t === "undefined") {
     return v === undefined;
+  } else if (!v) {
+    return false;
   }
   return typeof v === t;
 }
