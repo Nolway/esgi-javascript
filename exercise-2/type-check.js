@@ -26,5 +26,3 @@ function type_check_v2(v, conf) {
 
   return true;
 }
-
-console.log(type_check_v2({ test: "dgfds", test2: "23D" }, { value: { test: "dgfds", test2: "23D" } }));
