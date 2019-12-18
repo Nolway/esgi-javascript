@@ -28,5 +28,9 @@ function type_check_v2(v, conf) {
 }
 
 function type_check(obj, conf) {
-  return obj;
+  for (key in conf) {
+    
+  }
+  
+  return true;
 }
